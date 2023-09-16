@@ -1,6 +1,12 @@
 [![CI Status](https://github.com/se-edu/addressbook-level3/workflows/Java%20CI/badge.svg)](https://github.com/se-edu/addressbook-level3/actions)
 
+## This is **SOCareers**, which is an all-in-one app that helps CS majors to keep track of jobs/internship-related content.
+
 ![Ui](docs/images/Ui.png)
+
+
+
+* The app allows students to keep track of company application timelines, their networks of people, and interview timelines.
 
 * This is **a sample project for Software Engineering (SE) students**.<br>
   Example usages:
