@@ -34,7 +34,7 @@ public class ViewPersonCommandTest {
         List<Person> listToCheck = expectedModel.getFilteredPersonList();
         Person personToView = listToCheck.get(0);
         expectedModel.updateFilteredPersonList(new ContactIsEqualsPredicate(personToView));
-        assertCommandSuccess(new ViewPersonCommand(Index.fromOneBased(1)), model,
+        assertCommandSuccess(new ViewPersonCommand(INDEX_FIRST_PERSON), model,
                 String.format(ViewPersonCommand.MESSAGE_VIEW_PERSON_SUCCESS, 1), expectedModel);
     }
 
