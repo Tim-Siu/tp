@@ -15,6 +15,7 @@ import seedu.address.model.company.CompanyEmail;
 import seedu.address.model.company.CompanyName;
 import seedu.address.model.company.CompanyPhone;
 import seedu.address.model.company.Description;
+import seedu.address.model.company.Internship;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -22,21 +23,23 @@ import seedu.address.model.tag.Tag;
  */
 class JsonAdaptedCompany {
 
-    public static final String MISSING_FIELD_MESSAGE_FORMAT = "Person's %s field is missing!";
+    public static final String MISSING_FIELD_MESSAGE_FORMAT = "Company's %s field is missing!";
 
     private final String companyName;
     private final String phone;
     private final String email;
     private final String description;
     private final List<JsonAdaptedTag> tags = new ArrayList<>();
+    private final List<JsonAdaptedInternship> internships = new ArrayList<>();
 
     /**
-     * Constructs a {@code JsonAdaptedPerson} with the given person details.
+     * Constructs a {@code JsonAdaptedCompany} with the given company details.
      */
     @JsonCreator
     public JsonAdaptedCompany(@JsonProperty("companyName") String name, @JsonProperty("phone") String phone,
                               @JsonProperty("email") String email, @JsonProperty("description") String description,
-                              @JsonProperty("tags") List<JsonAdaptedTag> tags) {
+                              @JsonProperty("tags") List<JsonAdaptedTag> tags,
+                              @JsonProperty("internships") List<JsonAdaptedInternship> internships) {
         this.companyName = name;
         this.phone = phone;
         this.email = email;
@@ -44,10 +47,13 @@ class JsonAdaptedCompany {
         if (tags != null) {
             this.tags.addAll(tags);
         }
+        if (internships != null) {
+            this.internships.addAll(internships);
+        }
     }
 
     /**
-     * Converts a given {@code Person} into this class for Jackson use.
+     * Converts a given {@code Company} into this class for Jackson use.
      */
     public JsonAdaptedCompany(Company source) {
         companyName = source.getCompanyName().fullName;
@@ -57,17 +63,26 @@ class JsonAdaptedCompany {
         tags.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
+        internships.addAll(source.getInternships().stream()
+                .map(JsonAdaptedInternship::new)
+                .collect(Collectors.toList()));
     }
 
     /**
-     * Converts this Jackson-friendly adapted person object into the model's {@code Person} object.
+     * Converts this Jackson-friendly adapted company object into the model's {@code Company} object.
      *
-     * @throws IllegalValueException if there were any data constraints violated in the adapted person.
+     * @throws IllegalValueException if there were any data constraints violated in the adapted company.
      */
     public Company toModelType() throws IllegalValueException {
-        final List<Tag> personTags = new ArrayList<>();
+        final List<Tag> companyTags = new ArrayList<>();
+        final List<Internship> companyInternships = new ArrayList<>();
+
         for (JsonAdaptedTag tag : tags) {
-            personTags.add(tag.toModelType());
+            companyTags.add(tag.toModelType());
+        }
+
+        for (JsonAdaptedInternship internship : internships) {
+            companyInternships.add(internship.toModelType());
         }
 
         if (companyName == null) {
@@ -104,10 +119,11 @@ class JsonAdaptedCompany {
         if (!Description.isValidDescription(description)) {
             throw new IllegalValueException(Description.MESSAGE_CONSTRAINTS);
         }
-        final Description modelAddress = new Description(description);
+        final Description modelDesc = new Description(description);
 
-        final Set<Tag> modelTags = new HashSet<>(personTags);
-        return new Company(modelName, modelPhone, modelEmail, modelAddress, modelTags);
+        final Set<Tag> modelTags = new HashSet<>(companyTags);
+        final Set<Internship> modelInternships = new HashSet<>(companyInternships);
+        return new Company(modelName, modelPhone, modelEmail, modelDesc, modelTags, modelInternships);
     }
 
 }

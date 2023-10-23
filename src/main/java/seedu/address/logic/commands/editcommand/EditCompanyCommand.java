@@ -88,7 +88,7 @@ public class EditCompanyCommand extends EditCommand {
                 editCompanyDescriptor.getTags().orElse(companyToEdit.getTags());
 
         return new Company(updatedCompanyName, updatedCompanyPhone,
-                updatedCompanyEmail, updatedDescription, updatedTags);
+                updatedCompanyEmail, updatedDescription, updatedTags, companyToEdit.getInternships());
     }
 
     @Override

@@ -9,6 +9,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 
+import java.util.Collections;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,6 +24,7 @@ import seedu.address.model.company.CompanyEmail;
 import seedu.address.model.company.CompanyName;
 import seedu.address.model.company.CompanyPhone;
 import seedu.address.model.company.Description;
+import seedu.address.model.company.Internship;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
@@ -108,8 +110,9 @@ public class AddCommandParser implements Parser<AddCommand> {
             CompanyEmail email = ParserUtil.parseCompanyEmail(argMultimap.getValue(PREFIX_EMAIL).get());
             Description description = ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get());
             Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
+            Set<Internship> emptyInternshipList = Collections.emptySet();
 
-            Company company = new Company(name, phone, email, description, tagList);
+            Company company = new Company(name, phone, email, description, tagList, emptyInternshipList);
             return new AddCompanyCommand(company);
         }
     }

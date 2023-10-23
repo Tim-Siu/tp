@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 
 import seedu.address.logic.parser.Prefix;
 import seedu.address.model.company.Company;
+import seedu.address.model.company.Internship;
 import seedu.address.model.person.Person;
 
 /**
@@ -57,16 +58,29 @@ public class Messages {
     public static String formatCompany(Company company) {
         final StringBuilder builder = new StringBuilder();
         builder.append(company.getCompanyName())
-                .append("; Phone: ")
+                .append(";\n Phone: ")
                 .append(company.getCompanyPhone())
-                .append("; Email: ")
+                .append(";\n Email: ")
                 .append(company.getCompanyEmail())
-                .append("; Address: ")
+                .append(";\n Descriptions: ")
                 .append(company.getDescription())
-                .append("; Tags: ");
+                .append(";\n Tags: ");
         company.getTags().forEach(builder::append);
+        builder.append(";\n Internships: ");
+
+        for (Internship i : company.getInternships()) {
+            builder.append(formatInternship(i));
+        }
         return builder.toString();
     }
 
+    /**
+     * Formats the {@code internship} for display to the user.
+     */
+    public static String formatInternship(Internship internship) {
+        return "\n " + internship.getInternshipName() +
+                "; Description: " +
+                internship.getInternshipDesc() + ";";
+    }
 }
 

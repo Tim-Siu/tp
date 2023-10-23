@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 import seedu.address.model.AddressBook;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.company.Company;
+import seedu.address.model.company.Internship;
 import seedu.address.model.person.Person;
 import seedu.address.model.tag.Tag;
 
