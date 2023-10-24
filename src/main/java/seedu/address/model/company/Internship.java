@@ -26,7 +26,8 @@ public class Internship {
      * @param desc The description of the internship role.
      * @param interviewDateTime The date and time of the interview.
      */
-    public Internship(InternshipName roleName, InternshipDescription desc, InternshipInterviewDateTime interviewDateTime) {
+    public Internship(InternshipName roleName, InternshipDescription desc,
+                      InternshipInterviewDateTime interviewDateTime) {
         requireAllNonNull(roleName, desc, interviewDateTime);
         this.roleName = roleName;
         this.description = desc;
@@ -48,7 +49,7 @@ public class Internship {
 
     /**
      * Returns the date and time of the interview.
-     * Optional<InternshipInterviewDateTime> is returned as the date and time may be empty.
+     * Optional is returned as the date and time may be empty.
      *
      * @return The date and time of the interview.
      */

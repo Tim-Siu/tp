@@ -11,7 +11,6 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalCompanies.APPLE;
 import static seedu.address.testutil.TypicalCompanies.MICROSOFT;
-import static seedu.address.testutil.TypicalInternships.DATA_ANALYST_WITH_DATETIME;
 import static seedu.address.testutil.TypicalInternships.MARKETING_INTERN_WITHOUT_DATETIME;
 import static seedu.address.testutil.TypicalInternships.SOFTWARE_ENGINEER_WITH_DATETIME;
 
@@ -104,7 +103,8 @@ public class CompanyTest {
         String expected = Company.class.getCanonicalName()
             + "{\nname=" + APPLE.getCompanyName() + ", \nphone=" + APPLE.getCompanyPhone()
             + ", \nemail=" + APPLE.getCompanyEmail() + ", \ndescription="
-            + APPLE.getDescription() + ", \ntags=" + APPLE.getTags() + ", \ninternships=" + APPLE.getInternships() +"}";
+            + APPLE.getDescription() + ", \ntags=" + APPLE.getTags() + ", \ninternships="
+            + APPLE.getInternships() + "}";
         assertEquals(expected, APPLE.toString());
     }
 }

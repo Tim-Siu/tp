@@ -1,16 +1,15 @@
 package seedu.address.storage;
 
-import static java.util.Objects.isNull;
 import static seedu.address.commons.util.DateTimeParserUtil.parseDateTimeToString;
 import static seedu.address.commons.util.DateTimeParserUtil.parseStringToDateTime;
 
 import java.util.Objects;
 import java.util.Optional;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.address.commons.exceptions.IllegalValueException;
-import seedu.address.model.company.CompanyName;
 import seedu.address.model.company.Internship;
 import seedu.address.model.company.InternshipDescription;
 import seedu.address.model.company.InternshipInterviewDateTime;
@@ -20,10 +19,10 @@ import seedu.address.model.company.InternshipName;
  * Jackson-friendly version of {@link Internship}.
  */
 public class JsonAdaptedInternship {
+    public static final String MISSING_FIELD_MESSAGE_FORMAT = "Internship's %s field is missing!";
     private final String roleName;
     private final String description;
     private final String interviewDateTime;
-    public static final String MISSING_FIELD_MESSAGE_FORMAT = "Internship's %s field is missing!";
 
     /**
      * Constructs a {@code JsonAdaptedInternship} with the given {@code Internship}.

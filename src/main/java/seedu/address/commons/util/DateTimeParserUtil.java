@@ -13,14 +13,14 @@ import java.util.logging.Logger;
  * Parses String objects into LocalDateTime, and vice versa.
  */
 public class DateTimeParserUtil {
-    private static final Logger logger = Logger.getLogger(DateTimeParserUtil.class.getName());
-
     // Do NOT change DATE_FORMAT and TIME_FORMAT for now, this WILL mess up the parsing.
     public static final String DATE_FORMAT = "dd-MM-yyyy";
     public static final String TIME_FORMAT = "HH:mm";
 
     public static final String DATE_TIME_CONSTRAINTS =
             "Date and time must follow the format of " + DATE_FORMAT + " " + TIME_FORMAT;
+
+    private static final Logger logger = Logger.getLogger(DateTimeParserUtil.class.getName());
 
     /**
      * Parses a given string of the format stated in DATE_FORMAT and TIME_FORMAT into the LocalDateTime format.
@@ -51,18 +51,18 @@ public class DateTimeParserUtil {
      * Converts the interview date and time to a formatted string and returns it.
      * If the LocalDateTime object provided is empty or invalid, this method returns an empty String.
      *
-     * @param dateTimeLDT The LocalDateTime object to be converted.
+     * @param dateTimeLdt The LocalDateTime object to be converted.
      * @return The dateTime as a String object.
      */
-    public static String parseDateTimeToString(LocalDateTime dateTimeLDT) {
-        if (isNull(dateTimeLDT)) {
+    public static String parseDateTimeToString(LocalDateTime dateTimeLdt) {
+        if (isNull(dateTimeLdt)) {
             logger.info("The LocalDateTime object provided for parsing is empty");
             return "";
         }
 
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_FORMAT + " " + TIME_FORMAT);
-            return dateTimeLDT.format(formatter);
+            return dateTimeLdt.format(formatter);
         } catch (DateTimeException e) {
             logger.info("ERROR PARSING LocalDateTime TO String : " + e.getMessage());
             return "";

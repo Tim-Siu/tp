@@ -3,18 +3,12 @@ package seedu.address.testutil;
 import static seedu.address.commons.util.DateTimeParserUtil.parseStringToDateTime;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Map;
 import java.util.Optional;
-import java.util.Set;
 
-
-import seedu.address.model.company.InternshipDescription;
 import seedu.address.model.company.Internship;
+import seedu.address.model.company.InternshipDescription;
 import seedu.address.model.company.InternshipInterviewDateTime;
 import seedu.address.model.company.InternshipName;
-import seedu.address.model.tag.Tag;
-import seedu.address.model.util.SampleDataUtil;
 
 /**
  * A utility class to help with building Internship objects.

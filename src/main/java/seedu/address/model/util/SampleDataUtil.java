@@ -51,6 +51,7 @@ public class SampleDataUtil {
     /**
      * Returns an internship set based the list of maps given.
      */
+    @SafeVarargs
     public static Set<Internship> getInternshipSet(Map<String, String>... maps) {
         Set<Internship> internships = new HashSet<>();
 

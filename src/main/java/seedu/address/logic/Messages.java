@@ -78,9 +78,9 @@ public class Messages {
      * Formats the {@code internship} for display to the user.
      */
     public static String formatInternship(Internship internship) {
-        return "\n " + internship.getInternshipName() +
-                "; Description: " +
-                internship.getInternshipDesc() + ";";
+        return "\n " + internship.getInternshipName()
+                + "; Description: "
+                + internship.getInternshipDesc() + ";";
     }
 }
 

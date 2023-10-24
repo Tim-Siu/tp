@@ -5,10 +5,9 @@ import static seedu.address.storage.JsonAdaptedInternship.MISSING_FIELD_MESSAGE_
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalInternships.SOFTWARE_ENGINEER_WITH_DATETIME;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+
 import org.junit.jupiter.api.Test;
 
 import seedu.address.commons.exceptions.IllegalValueException;
@@ -24,42 +23,42 @@ public class JsonAdaptedInternshipTest {
     private static final String VALID_NAME = SOFTWARE_ENGINEER_WITH_DATETIME.getInternshipName().toString();
     private static final String VALID_DESCRIPTION = SOFTWARE_ENGINEER_WITH_DATETIME.getInternshipDesc().toString();
     private static final String VALID_DATETIME = SOFTWARE_ENGINEER_WITH_DATETIME
-            .getInternshipDateTime().get().toString();
+            .getInternshipDateTime().map(InternshipInterviewDateTime::toString).orElse("");
 
     /**
      * Generates a Map object which contains an invalid roleName for Internship
      */
     public static Map<String, String> generateInvalidNameInternshipMap() {
-        Map <String, String> INVALID_NAME_INTERNSHIP = new HashMap<>();
-        INVALID_NAME_INTERNSHIP.put("roleName", INVALID_NAME);
-        INVALID_NAME_INTERNSHIP.put("description", VALID_DESCRIPTION);
-        INVALID_NAME_INTERNSHIP.put("interviewDateTime", VALID_DATETIME);
+        Map <String, String> invalidNameInternship = new HashMap<>();
+        invalidNameInternship.put("roleName", INVALID_NAME);
+        invalidNameInternship.put("description", VALID_DESCRIPTION);
+        invalidNameInternship.put("interviewDateTime", VALID_DATETIME);
 
-        return INVALID_NAME_INTERNSHIP;
+        return invalidNameInternship;
     }
 
     /**
      * Generates a Map object which contains an invalid description for Internship
      */
     public static Map<String, String> generateInvalidDescInternshipMap() {
-        Map <String, String> INVALID_DESC_INTERNSHIP = new HashMap<>();
-        INVALID_DESC_INTERNSHIP.put("roleName", VALID_NAME);
-        INVALID_DESC_INTERNSHIP.put("description", INVALID_DESCRIPTION);
-        INVALID_DESC_INTERNSHIP.put("interviewDateTime", VALID_DATETIME);
+        Map <String, String> invalidDescInternship = new HashMap<>();
+        invalidDescInternship.put("roleName", VALID_NAME);
+        invalidDescInternship.put("description", INVALID_DESCRIPTION);
+        invalidDescInternship.put("interviewDateTime", VALID_DATETIME);
 
-        return INVALID_DESC_INTERNSHIP;
+        return invalidDescInternship;
     }
 
     /**
      * Generates a Map object which contains an invalid datetime for Internship
      */
     public static Map<String, String> generateInvalidDateTimeInternshipMap() {
-        Map <String, String> INVALID_DATE_TIME_INTERNSHIP = new HashMap<>();
-        INVALID_DATE_TIME_INTERNSHIP.put("roleName", VALID_NAME);
-        INVALID_DATE_TIME_INTERNSHIP.put("description", VALID_DESCRIPTION);
-        INVALID_DATE_TIME_INTERNSHIP.put("interviewDateTime", INVALID_DATETIME);
+        Map <String, String> invalidDateTimeInternship = new HashMap<>();
+        invalidDateTimeInternship.put("roleName", VALID_NAME);
+        invalidDateTimeInternship.put("description", VALID_DESCRIPTION);
+        invalidDateTimeInternship.put("interviewDateTime", INVALID_DATETIME);
 
-        return INVALID_DATE_TIME_INTERNSHIP;
+        return invalidDateTimeInternship;
     }
 
     @Test

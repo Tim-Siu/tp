@@ -2,7 +2,6 @@ package seedu.address.testutil;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import seedu.address.model.company.Company;
@@ -83,7 +82,7 @@ public class CompanyBuilder {
     /**
      * Removes the {@code Set<Internship>} from the {@code Company} that we are building.
      */
-    public CompanyBuilder withoutInternships(Internship... internships) {
+    public CompanyBuilder withoutInternships() {
         this.internships = new HashSet<>();
         return this;
     }
