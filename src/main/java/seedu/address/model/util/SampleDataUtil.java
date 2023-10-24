@@ -51,27 +51,7 @@ public class SampleDataUtil {
     /**
      * Returns an internship set based the list of maps given.
      */
-    @SafeVarargs
-    public static Set<Internship> getInternshipSet(Map<String, String>... maps) {
-        Set<Internship> internships = new HashSet<>();
-
-        for (Map<String, String> map : maps) {
-            String roleName = map.get("roleName");
-            String description = map.get("description");
-            String interviewDateTimeStr = map.get("interviewDateTime");
-
-            InternshipName roleNameObj = new InternshipName(roleName);
-            InternshipDescription descriptionObj = new InternshipDescription(description);
-
-            if (interviewDateTimeStr != null) {
-                InternshipInterviewDateTime interviewDateTimeObj =
-                        new InternshipInterviewDateTime(parseStringToDateTime(interviewDateTimeStr));
-                internships.add(new Internship(roleNameObj, descriptionObj, interviewDateTimeObj));
-            } else {
-                internships.add(new Internship(roleNameObj, descriptionObj));
-            }
-        }
-
-        return internships;
+    public static Set<Internship> getInternshipSet(Internship... internship) {
+        return new HashSet<>(Arrays.asList(internship));
     }
 }
