@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.logic.commands.CommandTestUtil.assertPersonCommandFailure;
 import static seedu.address.testutil.TypicalCompanies.getTypicalAddressBook;
+import static seedu.address.testutil.TypicalInternships.SOFTWARE_ENGINEER_WITH_DATETIME;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -84,6 +85,17 @@ public class AddCompanyCommandIntegrationTest {
     public void equals_differentCompany_returnsFalse() {
         Company company1 = new CompanyBuilder().withCompanyName("Company1").build();
         Company company2 = new CompanyBuilder().withCompanyName("Company2").build();
+        AddCompanyCommand addCompanyCommand1 = new AddCompanyCommand(company1);
+        AddCompanyCommand addCompanyCommand2 = new AddCompanyCommand(company2);
+        assertFalse(addCompanyCommand1.equals(addCompanyCommand2));
+    }
+
+    @Test
+    public void equals_differentCompanyWithInternships_returnsFalse() {
+        Company company1 = new CompanyBuilder().withCompanyName("Company1")
+                .withInternships(SOFTWARE_ENGINEER_WITH_DATETIME).build();
+        Company company2 = new CompanyBuilder().withCompanyName("Company2").withInternships()
+                .withInternships(SOFTWARE_ENGINEER_WITH_DATETIME).build();
         AddCompanyCommand addCompanyCommand1 = new AddCompanyCommand(company1);
         AddCompanyCommand addCompanyCommand2 = new AddCompanyCommand(company2);
         assertFalse(addCompanyCommand1.equals(addCompanyCommand2));
