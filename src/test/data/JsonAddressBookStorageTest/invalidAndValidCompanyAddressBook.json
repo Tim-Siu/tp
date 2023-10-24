@@ -6,14 +6,28 @@
       "email": "facebook@example.com",
       "phone": "67890123",
       "description": "A social media and technology company.",
-      "tags": ["social", "advertising"]
+      "tags": ["social", "advertising"],
+      "internships": [
+        {
+          "roleName": "Software Engineering Intern 2024",
+          "description": "Produce high quality software following good architecture that are scalable",
+          "interviewDateTime": "20-12-2023 08:00"
+        }
+      ]
     },
     {
       "companyName": "Invalid Company",
       "email": "facebook@example.com",
       "phone": "678fdfwwefw90123",
       "description": "A social media and technology company.",
-      "tags": ["social", "advertising"]
+      "tags": ["social", "advertising"],
+      "internships": [
+        {
+          "roleName": "Software Engineering Intern 2024",
+          "description": "Produce high quality software following good architecture that are scalable",
+          "interviewDateTime": "20-12-2023 08:00"
+        }
+      ]
     }
   ]
 }

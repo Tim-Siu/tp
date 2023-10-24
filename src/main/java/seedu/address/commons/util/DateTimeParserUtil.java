@@ -8,8 +8,6 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Objects;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Parses String objects into LocalDateTime, and vice versa.
@@ -18,8 +16,8 @@ public class DateTimeParserUtil {
     private static final Logger logger = Logger.getLogger(DateTimeParserUtil.class.getName());
 
     // Do NOT change DATE_FORMAT and TIME_FORMAT for now, this WILL mess up the parsing.
-    private static final String DATE_FORMAT = "dd-MM-yyyy";
-    private static final String TIME_FORMAT = "HH:mm";
+    public static final String DATE_FORMAT = "dd-MM-yyyy";
+    public static final String TIME_FORMAT = "HH:mm";
 
     public static final String DATE_TIME_CONSTRAINTS =
             "Date and time must follow the format of " + DATE_FORMAT + " " + TIME_FORMAT;

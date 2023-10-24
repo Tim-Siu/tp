@@ -22,6 +22,7 @@ import seedu.address.model.company.CompanyEmail;
 import seedu.address.model.company.CompanyName;
 import seedu.address.model.company.CompanyPhone;
 import seedu.address.model.company.Description;
+import seedu.address.model.company.Internship;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -86,9 +87,11 @@ public class EditCompanyCommand extends EditCommand {
                 editCompanyDescriptor.getDescription().orElse(companyToEdit.getDescription());
         Set<Tag> updatedTags =
                 editCompanyDescriptor.getTags().orElse(companyToEdit.getTags());
+        Set<Internship> updatedInternships =
+                editCompanyDescriptor.getInternships().orElse(companyToEdit.getInternships());
 
         return new Company(updatedCompanyName, updatedCompanyPhone,
-                updatedCompanyEmail, updatedDescription, updatedTags, companyToEdit.getInternships());
+                updatedCompanyEmail, updatedDescription, updatedTags, updatedInternships);
     }
 
     @Override
@@ -125,6 +128,7 @@ public class EditCompanyCommand extends EditCommand {
         private CompanyEmail companyEmail;
         private Description description;
         private Set<Tag> tags;
+        private Set<Internship> internships;
 
         public EditCompanyDescriptor() {}
 
@@ -138,6 +142,7 @@ public class EditCompanyCommand extends EditCommand {
             setCompanyEmail(toCopy.companyEmail);
             setDescription(toCopy.description);
             setTags(toCopy.tags);
+            setInternships(toCopy.internships);
         }
 
         /**
@@ -197,6 +202,23 @@ public class EditCompanyCommand extends EditCommand {
             return (tags != null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();
         }
 
+        /**
+         * Sets {@code internships} to this object's {@code internships}.
+         * A defensive copy of {@code internships} is used internally.
+         */
+        public void setInternships(Set<Internship> internships) {
+            this.internships = (internships != null) ? new HashSet<>(internships) : null;
+        }
+
+        /**
+         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}
+         * if modification is attempted.
+         * Returns {@code Optional#empty()} if {@code internships} is null.
+         */
+        public Optional<Set<Internship>> getInternships() {
+            return (internships != null) ? Optional.of(Collections.unmodifiableSet(internships)) : Optional.empty();
+        }
+
         @Override
         public boolean equals(Object other) {
             if (other == this) {
@@ -213,7 +235,8 @@ public class EditCompanyCommand extends EditCommand {
                     && Objects.equals(companyPhone, otherEditCompanyDescriptor.companyPhone)
                     && Objects.equals(companyEmail, otherEditCompanyDescriptor.companyEmail)
                     && Objects.equals(description, otherEditCompanyDescriptor.description)
-                    && Objects.equals(tags, otherEditCompanyDescriptor.tags);
+                    && Objects.equals(tags, otherEditCompanyDescriptor.tags)
+                    && Objects.equals(internships, otherEditCompanyDescriptor.internships);
         }
 
         @Override
@@ -224,6 +247,7 @@ public class EditCompanyCommand extends EditCommand {
                     .add("email", companyEmail)
                     .add("description", description)
                     .add("tags", tags)
+                    .add("internships", internships)
                     .toString();
         }
     }

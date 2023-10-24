@@ -80,6 +80,11 @@ public class JsonAdaptedInternship {
         final InternshipDescription modelDesc = new InternshipDescription(description);
 
         // Checking for interviewDateTime
+        if (interviewDateTime == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    InternshipInterviewDateTime.class.getSimpleName()));
+        }
+
         if (Objects.equals(interviewDateTime, "")) {
             // Creates an Internship object without an interview dateTime
             return new Internship(modelName, modelDesc);

@@ -1,5 +1,6 @@
 package seedu.address.model.company;
 
+import static java.util.Objects.isNull;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.DateTimeParserUtil.DATE_TIME_CONSTRAINTS;
 import static seedu.address.commons.util.DateTimeParserUtil.isValidDateTimeString;
@@ -41,8 +42,7 @@ public class InternshipInterviewDateTime {
      * @return true if valid, false if not.
      */
     public static boolean isValidInterviewDateTime(String test) {
-        requireNonNull(test);
-        if (Objects.equals(test.strip(), "")) {
+        if (isNull(test) || Objects.equals(test.strip(), "")) {
             return false;
         }
 
@@ -55,7 +55,10 @@ public class InternshipInterviewDateTime {
      * @return true if valid, false if not.
      */
     public static boolean isValidInterviewDateTime(LocalDateTime test) {
-        requireNonNull(test);
+        if (isNull(test)) {
+            return false;
+        }
+
         return isValidLocalDateTime(test);
     }
 

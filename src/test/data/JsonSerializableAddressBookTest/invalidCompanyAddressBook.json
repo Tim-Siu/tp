@@ -5,6 +5,7 @@
     "email": "invalid@email!3e",
     "phone": "12345678",
     "description": "Damith the Donut man?",
-    "tags": ["food", "hungry"]
+    "tags": ["food", "hungry"],
+    "internships": []
   }]
 }

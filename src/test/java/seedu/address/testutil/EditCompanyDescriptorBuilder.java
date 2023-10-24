@@ -1,5 +1,7 @@
 package seedu.address.testutil;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -11,6 +13,7 @@ import seedu.address.model.company.CompanyEmail;
 import seedu.address.model.company.CompanyName;
 import seedu.address.model.company.CompanyPhone;
 import seedu.address.model.company.Description;
+import seedu.address.model.company.Internship;
 import seedu.address.model.tag.Tag;
 
 
@@ -39,6 +42,7 @@ public class EditCompanyDescriptorBuilder {
         descriptor.setCompanyEmail(company.getCompanyEmail());
         descriptor.setDescription(company.getDescription());
         descriptor.setTags(company.getTags());
+        descriptor.setInternships(company.getInternships());
     }
 
     /**
@@ -80,6 +84,15 @@ public class EditCompanyDescriptorBuilder {
     public EditCompanyDescriptorBuilder withTags(String... tags) {
         Set<Tag> tagSet = Stream.of(tags).map(Tag::new).collect(Collectors.toSet());
         descriptor.setTags(tagSet);
+        return this;
+    }
+
+    /**
+     * Parses the {@code internships} into a {@code Set<Internship>} and set it to the {@code EditCompanyDescriptor}
+     * that we are building.
+     */
+    public EditCompanyDescriptorBuilder withInternships(Internship... internships) {
+        this.descriptor.setInternships(new HashSet<>(Arrays.asList(internships)));
         return this;
     }
 

@@ -115,15 +115,33 @@ public class Company {
         return Objects.hash(companyName, phone, email, description, tags, internships);
     }
 
+    /**
+     * Prints a list of internships for viewing.
+     *
+     * @return String of List of internships
+     */
+    public String toStringInternships() {
+        StringBuilder result = new StringBuilder("[");
+        for (Internship i : this.internships) {
+            result.append(i.toString()).append(", ");
+        }
+
+        if (result.length() >= 2) {
+            result.delete(result.length() - 2, result.length());
+        }
+        result.append("]");
+        return result.toString();
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-            .add("name", companyName)
-            .add("phone", phone)
-            .add("email", email)
-            .add("description", description)
-            .add("tags", tags)
-            .add("internships", internships)
+            .add("\nname", companyName)
+            .add("\nphone", phone)
+            .add("\nemail", email)
+            .add("\ndescription", description)
+            .add("\ntags", tags)
+            .add("\ninternships", toStringInternships())
             .toString();
     }
 }

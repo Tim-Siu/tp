@@ -148,7 +148,7 @@ public class AddCommandParserTest {
     @Test
     public void parseCompany_optionalFieldsMissing_success() {
         // zero tags
-        Company expectedCompany = new CompanyBuilder(APPLE).withTags().build();
+        Company expectedCompany = new CompanyBuilder(APPLE).withTags().withoutInternships().build();
         assertParseSuccess(parser,
                 " c " + COMPANY_NAME_DESC_APPLE + COMPANY_PHONE_DESC_APPLE
                         + COMPANY_EMAIL_DESC_APPLE + DESCRIPTION_DESC_APPLE,

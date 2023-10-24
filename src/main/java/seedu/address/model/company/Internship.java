@@ -79,10 +79,11 @@ public class Internship {
      */
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("name", roleName)
-                .add("description", description)
-                .add("interview date", interviewDateTime)
+        return new ToStringBuilder("")
+                .add("name", roleName.toString())
+                .add("description", description.toString())
+                .add("interview date",
+                        interviewDateTime.map(InternshipInterviewDateTime::toString).orElse("N/A"))
                 .toString();
     }
 

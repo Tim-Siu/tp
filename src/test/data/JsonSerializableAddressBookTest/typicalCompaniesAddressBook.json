@@ -7,33 +7,76 @@
       "email": "apple@example.com",
       "phone": "12345678",
       "description": "A technology company.",
-      "tags": ["tech", "innovative"]
+      "tags": ["tech", "innovative"],
+      "internships": [
+        {
+          "roleName": "Software Engineering Intern 2024",
+          "description": "Produce high quality software following good architecture that are scalable",
+          "interviewDateTime": "20-12-2023 08:00"
+        },
+        {
+          "roleName": "Data Analyst Intern 2024",
+          "description": "Learn data analysis tools and techniques",
+          "interviewDateTime": "15-01-2024 10:30"
+        }
+      ]
     },
     {
       "companyName": "Microsoft Corporation",
       "email": "microsoft@example.com",
       "phone": "23456789",
       "description": "A multinational technology company.",
-      "tags": ["tech", "windows"]
+      "tags": ["tech", "windows"],
+      "internships": [
+        {
+          "roleName": "Software Engineering Intern 2024",
+          "description": "Develop new features/functionalities on existing software products",
+          "interviewDateTime": ""
+        },
+        {
+          "roleName": "Data Analyst Intern 2024",
+          "description": "Learn data analysis tools and techniques",
+          "interviewDateTime": "15-01-2024 10:30"
+        },
+        {
+          "roleName": "Marketing Intern 2024",
+          "description": "Conduct market research and analysis",
+          "interviewDateTime": ""
+        }
+      ]
     },
     {
       "companyName": "Google LLC",
       "email": "google@example.com",
       "phone": "34567890",
       "description": "An internet-related services and products company.",
-      "tags": ["tech", "search"]
+      "tags": ["tech", "search"],
+      "internships": [
+        {
+          "roleName": "Software Engineering Intern 2024",
+          "description": "Develop new features/functionalities on existing software products",
+          "interviewDateTime": ""
+        },
+        {
+          "roleName": "Marketing Intern 2024",
+          "description": "Conduct market research and analysis",
+          "interviewDateTime": ""
+        }
+      ]
     },
     {
       "companyName": "Amazon.com Inc.",
       "email": "amazon@example.com",
       "phone": "45678901",
-      "description": "An online retailer and cloud services company."
+      "description": "An online retailer and cloud services company.",
+      "internships": []
     },
     {
       "companyName": "Netflix Inc.",
       "email": "netflix@example.com",
       "phone": "56789012",
-      "description": "A streaming service company."
+      "description": "A streaming service company.",
+      "internships": []
     }
   ]
 

@@ -6,14 +6,38 @@
       "email": "apple@example.com",
       "phone": "12345678",
       "description": "A technology company.",
-      "tags": ["tech", "innovative"]
+      "tags": ["tech", "innovative"],
+      "internships": [
+        {
+          "roleName": "Software Engineering Intern 2024",
+          "description": "Produce high quality software following good architecture that are scalable",
+          "interviewDateTime": "20-12-2023 08:00"
+        },
+        {
+          "roleName": "Data Analyst Intern 2024",
+          "description": "Learn data analysis tools and techniques",
+          "interviewDateTime": "15-01-2024 10:30"
+        }
+      ]
     },
     {
       "companyName": "Apple Inc.",
       "email": "apple@example.com",
       "phone": "12345678",
       "description": "A technology company.",
-      "tags": ["tech", "innovative"]
+      "tags": ["tech", "innovative"],
+      "internships": [
+        {
+          "roleName": "Software Engineering Intern 2024",
+          "description": "Produce high quality software following good architecture that are scalable",
+          "interviewDateTime": "20-12-2023 08:00"
+        },
+        {
+          "roleName": "Data Analyst Intern 2024",
+          "description": "Learn data analysis tools and techniques",
+          "interviewDateTime": "15-01-2024 10:30"
+        }
+      ]
     }
   ]
 }

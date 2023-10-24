@@ -94,9 +94,9 @@ public class CompanyTest {
     @Test
     public void toStringMethod() {
         String expected = Company.class.getCanonicalName()
-            + "{name=" + APPLE.getCompanyName() + ", phone=" + APPLE.getCompanyPhone()
-            + ", email=" + APPLE.getCompanyEmail() + ", description="
-            + APPLE.getDescription() + ", tags=" + APPLE.getTags() + "}";
+            + "{\nname=" + APPLE.getCompanyName() + ", \nphone=" + APPLE.getCompanyPhone()
+            + ", \nemail=" + APPLE.getCompanyEmail() + ", \ndescription="
+            + APPLE.getDescription() + ", \ntags=" + APPLE.getTags() + ", \ninternships=" + APPLE.getInternships() +"}";
         assertEquals(expected, APPLE.toString());
     }
 }

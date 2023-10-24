@@ -1,6 +1,8 @@
 package seedu.address.testutil;
 
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import seedu.address.model.company.Company;
@@ -8,6 +10,7 @@ import seedu.address.model.company.CompanyEmail;
 import seedu.address.model.company.CompanyName;
 import seedu.address.model.company.CompanyPhone;
 import seedu.address.model.company.Description;
+import seedu.address.model.company.Internship;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
 
@@ -26,6 +29,7 @@ public class CompanyBuilder {
     private CompanyEmail companyEmail;
     private Description description;
     private Set<Tag> tags;
+    private Set<Internship> internships;
 
     /**
      * Creates a {@code CompanyBuilder} with the default details.
@@ -36,6 +40,7 @@ public class CompanyBuilder {
         companyEmail = new CompanyEmail(DEFAULT_EMAIL);
         description = new Description(DEFAULT_DESCRIPTION);
         tags = new HashSet<>();
+        internships = new HashSet<>();
     }
 
     /**
@@ -47,6 +52,7 @@ public class CompanyBuilder {
         companyEmail = companyToCopy.getCompanyEmail();
         description = companyToCopy.getDescription();
         tags = new HashSet<>(companyToCopy.getTags());
+        internships = new HashSet<>(companyToCopy.getInternships());
     }
 
     /**
@@ -62,6 +68,23 @@ public class CompanyBuilder {
      */
     public CompanyBuilder withTags(String... tags) {
         this.tags = SampleDataUtil.getTagSet(tags);
+        return this;
+    }
+
+    /**
+     * Parses the {@code internships} into a {@code Set<Internship>}
+     * and set it to the {@code Company} that we are building.
+     */
+    public CompanyBuilder withInternships(Internship... internships) {
+        this.internships.addAll(Arrays.asList(internships));
+        return this;
+    }
+
+    /**
+     * Removes the {@code Set<Internship>} from the {@code Company} that we are building.
+     */
+    public CompanyBuilder withoutInternships(Internship... internships) {
+        this.internships = new HashSet<>();
         return this;
     }
 
@@ -90,6 +113,6 @@ public class CompanyBuilder {
     }
 
     public Company build() {
-        return new Company(companyName, companyPhone, companyEmail, description, tags);
+        return new Company(companyName, companyPhone, companyEmail, description, tags, internships);
     }
 }
