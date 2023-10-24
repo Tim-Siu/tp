@@ -7,6 +7,9 @@ import seedu.address.model.company.internship.InternshipDescription;
 import seedu.address.model.company.internship.InternshipInterviewDateTime;
 import seedu.address.model.company.internship.InternshipName;
 
+/**
+ * Provides some sample data for internships.
+ */
 public class InternshipSampleDataUtil {
     public static final Internship SOFTWARE_ENGINEER_WITH_DATETIME = new Internship(
             new InternshipName("Software Engineering Intern 2024"),

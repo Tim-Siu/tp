@@ -10,8 +10,6 @@ import static seedu.address.model.util.InternshipSampleDataUtil.SOFTWARE_ENGINEE
 import static seedu.address.model.util.SampleDataUtil.getInternshipSet;
 import static seedu.address.model.util.SampleDataUtil.getTagSet;
 
-import java.util.HashSet;
-
 import seedu.address.model.company.Company;
 import seedu.address.model.company.CompanyEmail;
 import seedu.address.model.company.CompanyName;
