@@ -10,10 +10,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.address.commons.exceptions.IllegalValueException;
-import seedu.address.model.company.Internship;
-import seedu.address.model.company.InternshipDescription;
-import seedu.address.model.company.InternshipInterviewDateTime;
-import seedu.address.model.company.InternshipName;
+import seedu.address.model.company.internship.Internship;
+import seedu.address.model.company.internship.InternshipDescription;
+import seedu.address.model.company.internship.InternshipInterviewDateTime;
+import seedu.address.model.company.internship.InternshipName;
 
 /**
  * Jackson-friendly version of {@link Internship}.

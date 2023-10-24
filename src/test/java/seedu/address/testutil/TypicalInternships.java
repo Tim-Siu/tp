@@ -2,7 +2,7 @@ package seedu.address.testutil;
 
 import static seedu.address.commons.util.DateTimeParserUtil.parseStringToDateTime;
 
-import seedu.address.model.company.Internship;
+import seedu.address.model.company.internship.Internship;
 
 /**
  * A utility class containing a list of {@code Internship} objects to be used in tests.

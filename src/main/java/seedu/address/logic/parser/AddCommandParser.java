@@ -24,7 +24,7 @@ import seedu.address.model.company.CompanyEmail;
 import seedu.address.model.company.CompanyName;
 import seedu.address.model.company.CompanyPhone;
 import seedu.address.model.company.Description;
-import seedu.address.model.company.Internship;
+import seedu.address.model.company.internship.Internship;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;

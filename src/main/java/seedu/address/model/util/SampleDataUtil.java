@@ -13,10 +13,10 @@ import java.util.stream.Collectors;
 import seedu.address.model.AddressBook;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.company.Company;
-import seedu.address.model.company.Internship;
-import seedu.address.model.company.InternshipDescription;
-import seedu.address.model.company.InternshipInterviewDateTime;
-import seedu.address.model.company.InternshipName;
+import seedu.address.model.company.internship.Internship;
+import seedu.address.model.company.internship.InternshipDescription;
+import seedu.address.model.company.internship.InternshipInterviewDateTime;
+import seedu.address.model.company.internship.InternshipName;
 import seedu.address.model.person.Person;
 import seedu.address.model.tag.Tag;
 

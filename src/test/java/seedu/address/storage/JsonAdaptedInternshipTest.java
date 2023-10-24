@@ -11,9 +11,9 @@ import java.util.Map;
 import org.junit.jupiter.api.Test;
 
 import seedu.address.commons.exceptions.IllegalValueException;
-import seedu.address.model.company.InternshipDescription;
-import seedu.address.model.company.InternshipInterviewDateTime;
-import seedu.address.model.company.InternshipName;
+import seedu.address.model.company.internship.InternshipDescription;
+import seedu.address.model.company.internship.InternshipInterviewDateTime;
+import seedu.address.model.company.internship.InternshipName;
 
 public class JsonAdaptedInternshipTest {
     private static final String INVALID_NAME = " ";

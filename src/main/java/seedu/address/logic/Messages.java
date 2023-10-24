@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 import seedu.address.logic.parser.Prefix;
 import seedu.address.model.company.Company;
-import seedu.address.model.company.Internship;
+import seedu.address.model.company.internship.Internship;
 import seedu.address.model.person.Person;
 
 /**
