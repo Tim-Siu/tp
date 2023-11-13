@@ -239,7 +239,6 @@ Keep track of your favourite companies effortlessly by adding them to your conta
 
 * After running the command, the output in the UI should be similar to the one shown below. The newly added
 company has been highlighted in red for clarity:<br>
-
 ![add company with all information added](images/addCompany.png)<br>
 
 <div markdown="block" class="alert alert-secondary">
